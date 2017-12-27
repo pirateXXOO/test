@@ -52,3 +52,9 @@ print("Your age is :",age)
 #print("You can live ",death_age - int(age)," years old.")
 print("You can live " + str(death_age - int(age)) + " years old.")
 
+wo = 123
+print(wo)
+
+print("shell")
+
+
