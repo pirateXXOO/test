@@ -30,3 +30,5 @@ You will be retired in %s years old
 '''% (name,name,age,job,salary,65-age)
 
 print(msg)
+
+print("My name is %s and I am %s years old."%(name,age))
