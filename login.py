@@ -19,17 +19,39 @@
 # #     print(i)
 # # print(range(3))
 
-_user="Jack"
-_passwd="123"
 
-username=input("Please input your username: ")
-for i in range(3):
-    password=input("Please input your password:")
+##########################################################################3
+## While practice
 
-    if username == _user and password == _passwd:
-        print("Welcome to GUNDAM!")
-        break
+# _user="Jack"
+# _passwd="123"
+#
+# username=input("Please input your username: ")
+# for i in range(3):
+#     password=input("Please input your password:")
+#
+#     if username == _user and password == _passwd:
+#         print("Welcome to GUNDAM!")
+#         break
+#     else:
+#         continue
+# else:
+#     print("Invalid username or password.")
+
+#######################################################
+## Flag
+
+for  i in range(10):
+    if i < 5 :
+        print(i)
     else:
-        continue
-else:
-    print("Invalid username or password.")
+        for j in range(20):
+            print("Layer2: ",j)
+            if j > 10 :
+                exit_flag = True
+                break
+        if exit_flag:
+            break
+
+
+
