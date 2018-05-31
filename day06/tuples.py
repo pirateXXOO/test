@@ -58,4 +58,3 @@ dic1.clear()
 print(dic1)
 
 del dic1
- 
