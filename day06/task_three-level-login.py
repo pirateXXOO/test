@@ -70,3 +70,43 @@ menu = {
         },
     },
 }
+
+# while True:
+#         for key in menu:
+#             print(key)
+#         choice = input("1>>:").strip()
+#         if choice in menu:
+#             while True:
+#                 for key2  in menu[choice]:
+#                     print(key2)
+#                 choice2 = input("2>>:").strip()
+#                 if choice2 in menu[choice]:
+#                     while True:
+#                         for key3 in menu[choice][choice2]:
+#                             print(key3)
+#                         choice3 = input("3>>:").strip()
+#                         if choice3 in menu[choice][choice2]:
+#                             while True:
+#                                 for key4 in menu[choice][choice2][choice3]:
+#                                     print(key4)
+#                                 choice4 = input("4>>:").strip()
+#                                 print("Last level")
+
+current_layer = menu
+# parent_layer = menu
+parent_layers = []
+
+while True:
+    for key in current_layer:
+        print(key)
+    choice = input(">>:").strip()
+    if len(choice) == 0:continue
+    if choice in current_layer:
+        parent_layers.append(current_layer)
+
+        current_layer = current_layer[choice]
+    elif choice == 'b':
+        if parent_layers:
+            current_layer = parent_layers.pop()
+    else:
+        print("No such choice!")
