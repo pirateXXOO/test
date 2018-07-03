@@ -33,8 +33,42 @@
 # f.close()
 
 
+# f=open('test','r')
+# file=f.readlines()
+# for i in file:
+#     print(i.strip())
+# f.close()
+
+
+# f = open('test','r') # for 内部将f 做成迭代器，用一个取一个
+# for i in f:
+#     print(i.strip())
+# f.close()
+
+#
+# f=open('test','r',encoding='utf8')
+# for i in f.readlines():
+#     print(i.strip())
+# f.close()
+
+
+# f=open('test','r')
+# number=0
+# for i in f: # 迭代器
+#     number+=1
+#     if number == 1:
+#         i=''.join([i.strip(),'####'])
+#     print(i.strip())
+# f.close()
+
+
 f=open('test','r')
-file=f.readlines()
-for i in file:
-    print(i.strip())
+print(f.tell())
+print(f.read(3))
+print(f.tell())
+f.seek(0)
+print(f.tell())
+print(f.read(4))
 f.close()
+
+
