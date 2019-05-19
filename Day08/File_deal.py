@@ -125,6 +125,11 @@
 #     f.read()
 # print('hello')
 
-with open('test','r') as f_read , open('test3','w') as f_write:
-    for line in f_read:
-        f_write.write(line)
+# with open('test','r') as f_read , open('test3','w') as f_write:
+#     for line in f_read:
+#         f_write.write(line)
+
+f = open('account', 'r', encoding='utf-8')
+print(f.readline().strip().split())
+print(f.readline().strip())
+f.close()

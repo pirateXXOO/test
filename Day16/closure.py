@@ -11,7 +11,7 @@ def outer():
 # inner  is a closure
 # outer()()
 
- f=outer()
- f()
+# f=outer()
+# f()
 
 # 闭包 = 内部函数+ 定义函数时的环境
