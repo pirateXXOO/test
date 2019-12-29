@@ -8,13 +8,18 @@ while True:
     inp = input(">>> ")
     sk.send(bytes(inp, 'utf8'))
     # result_len = int(str(sk.recv(1024), 'utf8'))
-    result_len = int(str(sk.recv(1024), 'gbk'))
-    print(result_len)
+    receive_len = sk.recv(1024)
+    sk.sendall(bytes('1', 'utf8'))
+    print('receive', receive_len)
+
+    int_result_len = int(str(receive_len, 'utf8'))
+    print(int_result_len)
     data = bytes()
-    while len(data) != result_len:
+    while len(data) != int_result_len:
         receive = sk.recv(1024)
         data += receive
 
-    print(str(data, 'utf8'))
+    str_data = str(data, 'utf8')
+    print(str_data)
 
 sk.close()

@@ -1,5 +1,6 @@
 import socket
 import subprocess
+
 address = ('127.0.0.1', 9999)
 sk = socket.socket()
 sk.bind(address)
@@ -38,12 +39,12 @@ while True:
 
         obj = subprocess.Popen(str(data, 'utf8'), shell=True, stdout=subprocess.PIPE)
         cmd_result = obj.stdout.read()
-        print(cmd_result)
-        print(len(cmd_result))
-        # result_len = bytes(str(len(cmd_result), 'utf8'))
-        result_len = bytes(cmd_result)
+        len_result = len(cmd_result)
+        str_len_result = str(len_result)
+        bytes_str_len_result = bytes(str_len_result, 'utf8')
 
-        conn.send(result_len)
-        conn.send(cmd_result)
+        conn.sendall(bytes_str_len_result)
+        conn.recv(1024)
+        conn.sendall(cmd_result)
 
 sk.close()
